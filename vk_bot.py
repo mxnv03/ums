@@ -1,11 +1,7 @@
-import requests
 import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 import random
 import json
-import requests
-import bs4
-from weather import _get_weather
 
 vk = vk_api.VkApi(token=
                   "vk1.a.7e3JWELeDsFfTuEwRaHzsVzlGYHdj0xBY8bFTnMVu5kEAlBfi-U8CX8YlQMjMR-"
@@ -184,6 +180,7 @@ weather_key = {
 weather_key = json.dumps(weather_key, ensure_ascii=False).encode('utf-8')
 weather_key = str(weather_key.decode('utf-8'))
 poster_key = weather_key
+
 try:
     for event in longpoll.listen():
         if event.type == VkEventType.MESSAGE_NEW:
@@ -282,8 +279,5 @@ try:
 
                 else:
                     write_msg(event.user_id, f'Ой, что-то пошло не так :(', key='')
-
-
-
 except Exception as e:
     print(e)
