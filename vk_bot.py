@@ -29,63 +29,6 @@ def write_msg(user_id, message, key):
                'keyboard': key,
                'random_id': random.randint(0, 2048)})
 
-
-about_us_keyboard = {
-    "inline": True,
-    "buttons": [
-        [{
-            "action": {
-                "type": "text",
-                "payload": "{\"button\": \"1\"}",
-                "label": "Основная информация"
-            },
-            "color": "positive"
-        }],
-        [{
-            "action": {
-                "type": "text",
-                "payload": "{\"button\": \"2\"}",
-                "label": "Чем мы занимаемся ?"
-            },
-            "color": "primary"
-        },
-        {
-            "action": {
-                "type": "text",
-                "payload": "{\"button\": \"3\"}",
-                "label": "Где мы находимся ?",
-            },
-            "color": "positive"
-        }],
-        [{
-            "action": {
-                "type": "text",
-                "payload": "{\"button\": \"4\"}",
-                "label": "Как попасть в команду ?",
-            },
-            "color": "primary"
-        }],
-        [{
-            "action": {
-                "type": "text",
-                "payload": "{\"button\": \"5\"}",
-                "label": "Контакты",
-            },
-            "color": 'secondary'
-        }],
-        [{
-            "action": {
-                "type": "text",
-                "payload": "{\"button\": \"6\"}",
-                "label": "Задать вопрос руководителю проекта",
-            },
-            "color": "negative"
-        }]
-    ],
-}
-about_us_keyboard = json.dumps(about_us_keyboard, ensure_ascii=False).encode('utf-8')
-about_us_keyboard = str(about_us_keyboard.decode('utf-8'))
-
 city_answer = {
     "inline": True,
     "buttons": [
